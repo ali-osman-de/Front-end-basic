@@ -1,0 +1,1 @@
+Yazılımcı fabrikası Reactjs eğitiminden öğrendiklerimi ve projelerimi yükleyeceğim ekstra olarak Hakan Yalçınkaya hocamdan aldığım Django kursundaki ön taraf bilgilerimi ve projelerimi yüklüyor olacağım.
