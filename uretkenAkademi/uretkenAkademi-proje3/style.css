@@ -1,0 +1,13 @@
+
+.navbar{
+    background-color: lightsteelblue;
+}
+.navbar-brand{
+    margin-left: 45%;
+    font-weight: 300;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.containerFooter{
+    background-color: lightsteelblue;
+    margin-top: 100px;
+}
