@@ -1,0 +1,76 @@
+body {
+    background-color: white;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.baslik {
+    display: inline-block;
+    padding-bottom: 0.25rem;
+    position: relative;
+    padding-bottom: 5px;
+    text-align: center;
+    font-size: xx-large;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 10 0 0;
+}
+
+.baslik::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: black; 
+    transition: width 0.25s ease-out;
+}
+
+.baslik:hover::before{
+    width: 100%;
+
+}
+
+#container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1000px;
+}
+
+.picture {
+    border: 3px;
+    border-color: whitesmoke;
+    border-style: initial;
+    object-fit: cover;
+    margin: 10px;
+    height: 300px;
+    width: 300px;
+    max-width: 100%;
+    transition: 1s;
+}
+
+.picture:hover{
+    transform: scale(0.9);
+    z-index: 2;
+}
+
+footer{
+    margin: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid grey;
+    padding: 25px;
+    width: 75%;
+}
+
+.footeryazi{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}

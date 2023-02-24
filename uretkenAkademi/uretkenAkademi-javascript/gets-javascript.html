@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Exercise</title>
+</head>
+<body>
+    
+    <input type="text" name="input" value="Ali Osman">
+
+    <h1 id="baslik">Hello Plunker</h1>
+    <p id="metin"></p>
+
+    <h2 class="deneme">H2 BASLİK</h2>
+    <h2 class="deneme">H2 BASLİK</h2>
+
+    <p class="deneme">paragraf</p>
+    <p class="deneme">paragraf</p>
+    <p class="deneme">paragraf</p>
+    <p class="deneme">paragraf</p>
+    <p class="deneme">paragraf</p>
+
+    <ul>
+        <li>Kayseri</li>
+        <li>İstanbul</li>
+        <li>Ankara</li>
+        <li>Isparta</li>
+        <li>İzmir</li>
+    </ul>
+
+    <ul>
+        <li>Turkey</li>
+        <li>USA</li>
+        <li>Germany</li>
+        <li>England</li>
+        <li>France</li>
+    </ul>
+
+    <script>
+        var baslik = document.getElementById("baslik")
+        var metin = document.getElementById("metin")
+
+        metin.innerHTML = baslik.innerHTML
+
+        var listeler = document.getElementsByTagName("ul")
+        var sehirler = listeler[0]
+
+        var sehiradlari = sehirler.getElementsByTagName("li")
+
+        for (i = 0; i < sehiradlari.length; i++) {
+            // alert(sehiradlari[i].innerHTML)
+        }
+
+        var deneme = document.getElementsByClassName("deneme")
+
+        deneme[0].innerHTML="BAŞARI"
+        
+        for (i = 0; i < deneme.length; i++) {
+            deneme[i].innerHTML = deneme[i].innerHTML + " " + i
+        }
+
+        var querySelector = document.querySelectorAll("h2.deneme")
+
+        querySelector[0].innerHTML = querySelector[0].innerHTML + " Değiştirildi"
+
+        var input = document.getElementsByName("input")
+
+        // alert(input[0].value)
+
+        // ADDEVENLISTENER
+
+        baslik.addEventListener("click",call)
+
+        function call() {
+            alert("basliga bastiniz!")
+        }
+
+        baslik.addEventListener("mouseover", colorchange)
+
+        function colorchange() {
+            sehiradlari[0].style.color = "red"
+        }
+
+    </script>
+</body>
+</html>

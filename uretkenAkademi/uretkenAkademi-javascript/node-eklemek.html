@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node eklemek</title>
+</head>
+<body>
+
+    <h1>Node eklemek</h1>
+
+    <div id="div1">
+        <p id="p1">Paragraf-1</p>
+        <p id="p2">Paragraf-2</p>
+    </div>
+    
+    <script>
+
+        var baslik = document.createElement("h3")
+        var node = document.createTextNode("Merhaba Ali Osman")
+
+        baslik.appendChild(node)
+
+        var div1 = document.getElementById("div1")
+        var p2 = document.getElementById("p2")
+
+        div1.insertBefore(baslik,p2)
+        // alert("p2 has been removed")
+        div1.removeChild(p2)
+
+        var p2 = document.getElementById("p2")
+        div1.replaceChild(baslik,p1)
+
+    </script>
+</body>
+</html>
