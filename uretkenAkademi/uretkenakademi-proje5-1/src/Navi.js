@@ -1,32 +1,60 @@
-import React, { Component } from "react";
-import { Navbar, NavbarBrand } from "reactstrap";
+import React from "react";
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+} from "reactstrap";
+import SepetOzeti from "./SepetOzeti";
 
-class Navi extends Component {
+export default class Example extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.toggle = this.toggle.bind(this);
+    this.state = {
+      isOpen: false,
+    };
+  }
+  toggle() {
+    this.setState({
+      isOpen: !this.state.isOpen,
+    });
+  }
   render() {
     return (
       <div>
         <Navbar
           color="warning"
+          light
+          expand="lg"
           style={{
-            marginBottom: "20px",
+            marginBottom: "10px",
           }}
         >
-          <NavbarBrand
-            href="/"
-            style={{
-              margin: "auto",
-              fontSize: "30px",
-            }}
-          >
-            Store
-          </NavbarBrand>
-          <NavbarBrand  href="/">
-            Buy Now {this.props.sepet.length}
-          </NavbarBrand>
+          <NavbarBrand href="/">Store</NavbarBrand>
+          <NavbarToggler onClick={this.toggle} />
+          <Collapse isOpen={this.state.isOpen} navbar>
+            <Nav className="ml-auto" navbar>
+              <NavItem>
+                <NavLink href="/components/">Components</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="https://github.com/reactstrap/reactstrap">
+                  GitHub
+                </NavLink>
+              </NavItem>
+              <SepetOzeti
+                sepettenCikar={this.props.sepettenCikar}
+                sepet={this.props.sepet}
+              />
+            </Nav>
+          </Collapse>
         </Navbar>
       </div>
     );
   }
 }
-
-export default Navi;

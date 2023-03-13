@@ -3,6 +3,7 @@ import Kategori from "./Kategori";
 import Navi from "./Navi";
 import UrunListesi from "./UrunListesi";
 import React, { Component } from "react";
+import alertify from "alertifyjs";
 
 class App extends Component {
   state = {
@@ -33,6 +34,13 @@ class App extends Component {
     }
 
     this.setState({ sepet: yeniUrun });
+    alertify.success(urun.productName + " Sepete Eklendi",2);
+  };
+
+  sepettenCıkar = (urun) => {
+    let kalanUrunler = this.state.sepet.filter((s) => s.urun.id !== urun.id);
+    this.setState({ sepet: kalanUrunler });
+    alertify.warning(urun.productName + " Sepetten Çıkarıldı",2);
   };
 
   componentDidMount() {
@@ -51,7 +59,7 @@ class App extends Component {
     };
     return (
       <div>
-        <Navi sepet={this.state.sepet} />
+        <Navi sepettenCikar={this.sepettenCıkar} sepet={this.state.sepet} />
         <Container>
           <Row>
             <Col xs="6">
