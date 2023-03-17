@@ -9,6 +9,7 @@ import {
   NavLink,
 } from "reactstrap";
 import SepetOzeti from "./SepetOzeti";
+import {Link} from "react-router-dom"
 
 export default class Example extends React.Component {
   constructor(props) {
@@ -39,8 +40,13 @@ export default class Example extends React.Component {
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink href="/components/">Components</NavLink>
+              <NavItem><NavLink>
+              <Link to="/form">Form</Link>
+              </NavLink>
+              </NavItem>
+              <NavItem><NavLink>
+              <Link to="/form2">Form2</Link>
+              </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="https://github.com/reactstrap/reactstrap">

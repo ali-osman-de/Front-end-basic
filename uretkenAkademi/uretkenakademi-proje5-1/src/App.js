@@ -4,6 +4,11 @@ import Navi from "./Navi";
 import UrunListesi from "./UrunListesi";
 import React, { Component } from "react";
 import alertify from "alertifyjs";
+import { Route, Routes } from "react-router-dom";
+import NotFound from "./NotFound";
+import SepetListesi from "./SepetListesi";
+import FormDemo from "./FormDemo";
+import FormDemo2 from "./FormDemo2";
 
 class App extends Component {
   state = {
@@ -34,13 +39,13 @@ class App extends Component {
     }
 
     this.setState({ sepet: yeniUrun });
-    alertify.success(urun.productName + " Sepete Eklendi",2);
+    alertify.success(urun.productName + " Sepete Eklendi", 2);
   };
 
   sepettenCıkar = (urun) => {
     let kalanUrunler = this.state.sepet.filter((s) => s.urun.id !== urun.id);
     this.setState({ sepet: kalanUrunler });
-    alertify.warning(urun.productName + " Sepetten Çıkarıldı",2);
+    alertify.error(urun.productName + " Sepetten Çıkarıldı", 2);
   };
 
   componentDidMount() {
@@ -62,20 +67,39 @@ class App extends Component {
         <Navi sepettenCikar={this.sepettenCıkar} sepet={this.state.sepet} />
         <Container>
           <Row>
-            <Col xs="6">
+            <Col xs="3">
               <Kategori
                 seciliKategori={this.state.seciliKategori}
                 kategoriDegistir={this.kategoriDegistir}
                 baslik={KategoriBaslik}
               />
             </Col>
-            <Col xs="6">
-              <UrunListesi
-                sepeteEkle={this.sepeteEkle}
-                urunler={this.state.urunler}
-                seciliKategori={this.state.seciliKategori}
-                baslik={UrunListesiBaslik}
-              />
+            <Col xs="9">
+              <Routes>
+                <Route
+                  path="/"
+                  element={
+                    <UrunListesi
+                      sepeteEkle={this.sepeteEkle}
+                      urunler={this.state.urunler}
+                      seciliKategori={this.state.seciliKategori}
+                      baslik={UrunListesiBaslik}
+                    />
+                  }
+                />
+                <Route
+                  path="/sepet"
+                  element={
+                    <SepetListesi
+                      sepet={this.state.sepet}
+                      sepettenCıkar={this.sepettenCıkar}
+                    />
+                  }
+                />
+                <Route path="/form" element={<FormDemo />} />
+                <Route path="/form2" element={<FormDemo2 />} />
+                <Route path="/*" element={<NotFound />} />
+              </Routes>
             </Col>
           </Row>
         </Container>
