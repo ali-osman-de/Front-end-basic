@@ -1,0 +1,28 @@
+.butonDec{
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+}
+.butonDecTwo{
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+}
+.butonInc{
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+}
+.butonIncTwo{
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+}
+.counter{
+    display: flex;
+    justify-content: center;
+    margin: 100px;
+}
+#totalnumber{
+    margin-top: 30px;
+}
