@@ -1,0 +1,1 @@
+Bu projede yapmış olduğum websitesinin canlı haline<a href="https://patika-dv-project-002.netlify.app" > buraya tıklayabilirsiniz!</a>
