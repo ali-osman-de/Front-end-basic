@@ -1,0 +1,1 @@
+Bu projede yapmış olduğum websitesinin canlı haline<a href="https://instagram-new-clones.netlify.app" > buraya tıklayabilirsiniz!</a>
