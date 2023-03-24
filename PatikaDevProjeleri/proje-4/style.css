@@ -1,0 +1,15 @@
+body{
+    text-align: center;
+}
+.baslik{
+    color: red;
+}
+.naviItem{
+    margin-left: 10px;
+}
+.itemTitle{
+    color:wheat;
+}
+.liste{
+    list-style-position: inside
+}
