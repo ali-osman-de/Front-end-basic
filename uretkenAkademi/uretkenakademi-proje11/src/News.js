@@ -14,7 +14,7 @@ function News() {
   const fetchNews = async () => {
     try {
       const res = await fetch(
-        "https://newsapi.org/v2/everything?q=tesla&from=2023-03-01&sortBy=publishedAt&apiKey=32a3c6d4d6544594a685f7507719369e"
+        "https://newsapi.org/v2/everything?q=tesla&from=2023-03-03&sortBy=publishedAt&apiKey=32a3c6d4d6544594a685f7507719369e"
       );
       const data = await res.json();
       setNews(data["articles"]);
@@ -28,6 +28,7 @@ function News() {
   return (
     <div>
       <h3 className="text-center display-5 ">News</h3>
+      <hr/>
       {news.map((data) => (
         <Card
           style={{
