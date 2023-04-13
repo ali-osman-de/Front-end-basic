@@ -2,6 +2,8 @@
 
 https://exchange-website-withownapi.netlify.app
 
+please upgrade api link becaeuse api link is private.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
