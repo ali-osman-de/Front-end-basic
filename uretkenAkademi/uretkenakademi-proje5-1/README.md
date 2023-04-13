@@ -1,3 +1,9 @@
+# Live Version
+
+https://marketing-app-001.netlify.app
+
+but you must use json-server with if you don't use json-server you will not see data on page.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
