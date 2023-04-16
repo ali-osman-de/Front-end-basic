@@ -1,9 +1,9 @@
-
+import Navi from "./comps/Navi";
 
 function App() {
   return (
-    <div >
-
+    <div>
+      <Navi />
     </div>
   );
 }
